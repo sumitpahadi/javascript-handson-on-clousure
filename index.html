@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="heading"><h1>Javascript handson on closure</h1></div>
+    <br />
+    <hr />
+    <pre class="question">
+    Question 1=>
+    "    function counter(){
+        var counter = 0;
+    
+        function IncreaseCounter() {
+            return counter += 1;
+        };
+    
+        return IncreaseCounter;
+    }
+    
+    var counter = counter();
+    alert(counter());
+    alert(counter());
+    alert(counter());
+    alert(counter());"
+   </pre
+    >
+    <br />
+    <pre class="answer">
+    answer=>1
+            2
+            3
+            4
+    
+   </pre
+    >
+    <hr />
+    <pre class="question">
+    Question 2=> "let count = 0;
+    (function () {
+      if (count === 0) {
+        let count = 1;
+        console.log(count); // What is logged?
+      }
+      console.log(count); // What is logged?
+    })();"</pre
+    >
+    <br />
+    <pre class="answer">
+        answer=> 1
+                 0
+    </pre>
+    <hr />
+    <pre class="question">
+     Question 3=>
+        "for (var i = 0; i < 3; i++) {
+        setTimeout(function log() {
+          console.log(i); // What is logged?
+        }, 1000);
+      }"</pre
+    >
+    <br />
+    <pre class="answer">
+     answer=>
+        3
+        3
+        3
+        here is an important aspect to note regarding the behavior of setTimeout and closures in JavaScript. By the time the callback function is executed, the loop has already finished executing, and the value of i is 3.
+      </pre
+    >
+    <hr />
+    <pre class="question">
+        Question 4=> Write a code to calculate area of a rectangle using inner function. In this case outer function should accept parameter length and inner function should accept parameter breadth.</pre
+    >
+    <br />
+    <pre class="answer">
+        Answer=>function outer (length)
+        {
+          function inner(breath)
+            {
+              console.log( length * breath);
+            }
+          inner(4)
+        }
+        
+        outer(4)</pre
+    >
+    <hr />
+    <pre class="question">
+        Question 5=> Take a variable in outer function and create an inner function to increase the counter every time it is called</pre
+    >
+    <br />
+    <pre class="answer">
+          Answer=>function createCounter() {
+            let counter = 0;
+          
+            function incrementCounter() {
+              counter++;
+              console.log(counter);
+            }
+          
+            return incrementCounter;
+          }
+          
+          // Usage
+          const counter = createCounter();
+          counter(); // Output: 1
+          counter(); // Output: 2
+          counter(); // Output: 3
+          </pre
+    >
+    <hr />
+    <pre class="question">
+            Question 6=> 
+            "Print Output
+
+            var a = 12;
+            (function () {
+              alert(a);
+            })();"</pre
+    >
+    <br />
+    <pre class="answer">
+        Answer=> 12
+
+            </pre
+    >
+    <hr />
+    <pre class="question">Question 7=>
+        "var a = 10;
+        var x = (function () {
+          var a = 12;
+          return function () {
+            alert(a);
+          };
+        })();
+        x();"</pre
+    >
+    <br />
+    <pre class="answer"> Answer=>12 </pre>
+    <hr />
+    <pre class="question">Question 8=>"var globalVar = ""xyz"";
+
+        (function outerFunc(outerArg) {
+            var outerVar = 'a';
+            
+            (function innerFunc(innerArg) {
+            var innerVar = 'b';
+            
+            console.log(
+                ""outerArg = "" + outerArg + ""\n"" +
+                ""innerArg = "" + innerArg + ""\n"" +
+                ""outerVar = "" + outerVar + ""\n"" +
+                ""innerVar = "" + innerVar + ""\n"" +
+                ""globalVar = "" + globalVar);
+            
+            })(456);
+        })(123);"</pre>
+    <br />
+    <pre class="answer"> Answer=>outerArg = 123
+        innerArg = 456
+        outerVar = a
+        innerVar = b
+        globalVar = xyz</pre>
+
+    <hr />
+    
+  </body>
+</html>

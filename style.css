@@ -1,0 +1,22 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    background-color: yellowgreen;
+}
+
+.heading
+{
+    text-align: center;
+}
+.question{
+    font-size: larger;
+    font-weight: 700;
+    font-family:serif;
+    padding: 20px;
+}
+.answer{
+    font-size: large;
+    font-weight: 500;
+    padding: 20px;
+}
